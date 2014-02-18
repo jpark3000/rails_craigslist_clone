@@ -7,6 +7,9 @@ class PostsController < ApplicationController
 	def create
 		@user = User.find(session[:user_id])
 		@post = Post.create(post_params)
+    # This shovel operator (<<) makes a DB call. better to set the user above, before saving:
+    # @post = Post.new(post_params)
+    # @post.user = @user
 		@user.posts << @post
 		redirect_to @post
 	end

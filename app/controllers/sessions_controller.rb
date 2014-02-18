@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
 	def logout
 		session.clear
+    # instead redirect_to root_path
 		redirect_to '/'
 	end
 
