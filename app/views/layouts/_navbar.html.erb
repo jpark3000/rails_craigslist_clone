@@ -1,0 +1,10 @@
+<header>
+<ul>
+	<% if session[:user_id] %>
+		<%= render partial: '/layouts/session' %>
+	<% else %>
+		<%= render partial: '/layouts/no_session' %>
+	<% end %>
+	<li id='home'><%= link_to 'Home', root_path %>
+</ul>
+</header>

@@ -1,0 +1,8 @@
+<div class='container'>
+	<h1><%= @category.title %></h1>
+	<ul id='posts'>
+		<% @category.posts.each do |post| %>
+			<li class='post'><%= link_to post.title, post_path(post) %></li>
+		<% end %>
+	</ul>
+</div>
